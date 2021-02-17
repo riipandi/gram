@@ -7,6 +7,10 @@ agent:
 blocks:
   - name: Test
     task:
+      prologue:
+        commands:
+          - phpbrew --no-progress install 7.4
+          - sem-version php 7.4
       jobs:
         - name: Test
           commands:
